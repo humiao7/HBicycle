@@ -1,35 +1,3 @@
 @import '~antd/dist/antd.css';
 
 .App {}
-
-.left-slide {
-    overflow: auto;
-    height: 100vh;
-    position: fixed;
-    left: 0
-}
-
-.app-logo {
-    height: 90px;
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-    background: #002140;
-}
-
-.app-logo img {
-    width: 50px;
-}
-
-.app-logo h1 {
-    color: #ffffff;
-    font-size: 20px;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0 0 10px;
-    font-weight: 500;
-}
-
-.site-layout .site-layout-background {
-    background: #fff;
-}
