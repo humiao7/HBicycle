@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Route } from 'react-router-dom'
 
 import router from "./router"
 
@@ -10,7 +10,7 @@ function App() {
     <Router>{
       router.map((router, index) => {
         return (
-          <Route exact path={router.path} component={router.component} />
+          <Route exact path={router.path} component={router.component} key={index}/>
         )
       })
     }</Router>

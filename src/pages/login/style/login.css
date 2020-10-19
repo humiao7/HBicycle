@@ -1,0 +1,54 @@
+.loginBackground {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-Items: center;
+    justify-content: center;
+    background-image: url(../assets/background.jpg);
+    background-size: 100% auto;
+}
+
+.loginBox {
+    width: 30%;
+    height: auto;
+    padding: 20px 50px 30px;
+    text-align: center;
+    background: #00000060;
+}
+
+.loginBox h1 {
+    color: #fff;
+}
+
+.loginBox .loginButton {
+    margin-top: 20px;
+}
+
+.ant-input-prefix {
+    font-size: 20px;
+    color: #555;
+}
+
+.loginBox .ant-input-clear-icon {
+    font-size: 14px;
+}
+
+.loginBox .register {
+    margin-top: 30px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #fff;
+}
+
+.loginBox .register a {
+    color: #fff;
+    border-bottom: 1px solid transparent;
+}
+
+.loginBox .register a:hover {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}

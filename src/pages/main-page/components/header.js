@@ -6,7 +6,7 @@ class Header extends Component {
         return (
             <div style={{ height: '60px', display: "inline-flex", alignItems: "center", justifyContent: "flex-end" }}>
                 <span style={{ color: '#000000a6', fontSize: "14px", marginRight: "40px" }}>欢迎你，王路飞</span>
-                <Link to="/login"><a>退出</a></Link>
+                <Link to="/login"><span>退出</span></Link>
             </div>
         )
     }

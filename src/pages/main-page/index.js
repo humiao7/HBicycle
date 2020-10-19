@@ -5,10 +5,10 @@ import MainSider from './components/sider'
 import MainHeader from './components/header'
 import MainContent from './components/content'
 
-import './main.css';
+import './style/main.css';
 
 function MainPage() {
-    const { Header, Content, Footer, Sider } = Layout;
+    const { Header, Footer, Sider } = Layout;
 
     return (
         <Layout>
