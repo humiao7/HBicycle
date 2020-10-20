@@ -19,75 +19,75 @@ import Permission from '../pages/permission'
 
 const routes = [
     {
-        path: "/main-page/home",
+        path: "/main/home",
         exact: false,
         component: Home
     }, {
-        path: "/main-page/ui/buttons",
+        path: "/main/ui/buttons",
         exact: false,
         component: Buttons
     }, {
-        path: "/main-page/ui/modal",
+        path: "/main/ui/modal",
         exact: false,
         component: Modal
     }, {
-        path: "/main-page/ui/loading",
+        path: "/main/ui/loading",
         exact: false,
         component: Loading
     }, {
-        path: "/main-page/ui/notification",
+        path: "/main/ui/notification",
         exact: false,
         component: Notification
     }, {
-        path: "/main-page/ui/message",
+        path: "/main/ui/message",
         exact: false,
         component: Message
     }, {
-        path: "/main-page/ui/tab",
+        path: "/main/ui/tab",
         exact: false,
         component: Tab
     }, {
-        path: "/main-page/form/basic",
+        path: "/main/form/basic",
         exact: false,
         component: BasicList
     }, {
-        path: "/main-page/form/senior",
+        path: "/main/form/senior",
         exact: false,
         component: SeniorList
     }, {
-        path: "/main-page/rich-text",
+        path: "/main/rich-text",
         exact: false,
         component: RichText
     }, {
-        path: "/main-page/citys",
+        path: "/main/citys",
         exact: false,
         component: Citys
     }, {
-        path: "/main-page/order-manage",
+        path: "/main/order-manage",
         exact: false,
         component: OrderManage
     }, {
-        path: "/main-page/employees",
+        path: "/main/employees",
         exact: false,
         component: Employees
     }, {
-        path: "/main-page/map",
+        path: "/main/map",
         exact: false,
         component: Map
     }, {
-        path: "/main-page/charts1",
+        path: "/main/charts1",
         exact: false,
         component: Charts1
     }, {
-        path: "/main-page/charts2",
+        path: "/main/charts2",
         exact: false,
         component: Charts2
     }, {
-        path: "/main-page/charts3",
+        path: "/main/charts3",
         exact: false,
         component: Charts3
     }, {
-        path: "/main-page/permission",
+        path: "/main/permission",
         exact: false,
         component: Permission
     }

@@ -1,12 +1,16 @@
 import Login from '../modules/login'
-import MainPage from '../modules/main-page'
+import MainPage from '../modules/main'
 
 let routes = [{
+    path: "/",
+    exact: true,
+    component: Login
+}, {
     path: "/login",
     exact: false,
     component: Login
 }, {
-    path: "/main-page",
+    path: "/main",
     exact: false,
     component: MainPage
 }];

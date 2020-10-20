@@ -12,7 +12,7 @@ function Login() {
                 <h1>Login</h1>
                 <Input size="large" allowClear autoFocus placeholder="请输入账号" prefix={<UserOutlined />} style={{ borderRadius: "2px 2px 0 0" }} />
                 <Input.Password size="large" placeholder="请输入密码" prefix={<KeyOutlined />} style={{ borderRadius: "0 0 2px 2px" }} />
-                <Link to="/main-page">
+                <Link to="/main">
                     <Button type="primary" block className="loginButton">登 录</Button>
                 </Link>
                 <div className="register">
