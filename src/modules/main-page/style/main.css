@@ -1,0 +1,78 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.slide-layout {
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    overflow: auto;
+}
+
+.slide-layout .main-logo {
+    height: 60px;
+    padding: 0px 12px;
+    display: flex;
+    align-items: center;
+    background: #002140;
+}
+
+.slide-layout .main-logo img {
+    width: 60px
+}
+
+.slide-layout .main-logo h1 {
+    color: #ffffff;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 10px;
+    font-weight: 500;
+}
+
+.content-layout {
+    height: 100vh;
+    margin-right: 260;
+    overflow: scroll;
+}
+
+.content-layout .header {
+    height: 60px;
+    padding: 0 20px 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+}
+
+.content-layout .header .sider-togger {
+    font-size: 20px;
+    color: #002140;
+}
+
+.content-layout .header .header-placehoder {
+    flex: 1;
+}
+
+.content-layout .header .welcome {
+    color: #000000a6;
+    font-size: 14px;
+    margin-right: 40px;
+}
+
+.content-layout .header .logout {
+    font-size: 14px;
+}
+
+.content-layout .content {
+    margin: 24px 16px 0;
+    padding: 24;
+    text-align: center;
+    background: #ffffff;
+}
+
+.content-layout .footer {
+    height: 60px;
+    text-align: center;
+}

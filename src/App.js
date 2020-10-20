@@ -1,20 +1,30 @@
-import React from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom'
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
+// 引入路由配置文件
 import router from "./router"
 
 import './App.css';
 
-function App() {
-  return (
-    <Router>{
-      router.map((router, index) => {
-        return (
-          <Route exact path={router.path} component={router.component} key={index}/>
-        )
-      })
-    }</Router>
-  );
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+  render() {
+    return (
+      <Router>
+        <Switch>{
+          router.map((router, index) => {
+            return (
+              <Route key={index} path={router.path} exact={router.exact} component={router.component} />
+            )
+          })
+        }</Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;

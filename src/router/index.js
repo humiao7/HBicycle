@@ -1,12 +1,14 @@
-let routes = [];
+import Login from '../modules/login'
+import MainPage from '../modules/main-page'
 
-const pages = [
-    "login",
-    "main-page"
-];
-
-pages.forEach(page => {
-    routes.push(...require(`../pages/${page}/router`).default);
-})
+let routes = [{
+    path: "/login",
+    exact: false,
+    component: Login
+}, {
+    path: "/main-page",
+    exact: false,
+    component: MainPage
+}];
 
 export default routes;
