@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Row, Card, Button, notification } from 'antd';
+import { Card, Button, notification } from 'antd';
 import { ClockCircleOutlined, RadiusUpleftOutlined, RadiusUprightOutlined, RadiusBottomleftOutlined, RadiusBottomrightOutlined, } from '@ant-design/icons';
 
 
