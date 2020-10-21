@@ -1,30 +1,130 @@
 import React, { Component, Fragment } from 'react'
-import { Layout, Menu } from 'antd'
+import { Layout, Menu, Tabs } from 'antd'
 import { MenuUnfoldOutlined, MenuFoldOutlined, DesktopOutlined, SkinOutlined, FormOutlined, InsertRowAboveOutlined, ProfileOutlined, ShopOutlined, ContainerOutlined, TeamOutlined, CarOutlined, BarChartOutlined, KeyOutlined } from '@ant-design/icons';
-import { Route, Link, Switch, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
+import Home from './pages/home'
+import Buttons from './pages/buttons'
+import Modal from './pages/modal'
+import Loading from './pages/loading'
+import Notification from './pages/notification'
+import Message from './pages/message'
+import Tab from './pages/tab'
+import BasicList from './pages/basic-list'
+import SeniorList from './pages/senior-list'
+import RichText from './pages/rich-text'
+import Citys from './pages/citys'
+import OrderManage from './pages/order-manage'
+import Employees from './pages/employees'
+import CarMap from './pages/car-map'
+import Charts1 from './pages/charts1'
+import Charts2 from './pages/charts2'
+import Charts3 from './pages/charts3'
+import Permission from './pages/permission'
 
 import logoUrl from "./assets/bicycle.svg"
 
 import './style/main.css';
 
-import routes from './router';
-
+const { Header, Content, Sider } = Layout;
 const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
+const { TabPane } = Tabs;
+
+const menuList = [
+    { key: "nav1", title: "首页", icon: <DesktopOutlined />, component: <Home /> },
+    {
+        key: "nav2", title: "UI", icon: <SkinOutlined />, component: null, subMenus: [
+            { key: "nav21", title: "按钮", component: <Buttons /> },
+            { key: "nav22", title: "弹窗", component: <Modal /> },
+            { key: "nav23", title: "Loading", component: <Loading /> },
+            { key: "nav24", title: "通知提醒", component: <Notification /> },
+            { key: "nav25", title: "全局Message", component: <Message /> },
+            { key: "nav26", title: "Tab页签", component: <Tab /> },
+            { key: "nav27", title: "轮播图", component: <Tab /> },
+        ]
+    },
+    {
+        key: "nav3", title: "表单", icon: <FormOutlined />, component: null, subMenus: [
+            { key: "nav31", title: "登录", component: null },
+            { key: "nav32", title: "注册", component: null },
+        ]
+    },
+    {
+        key: "nav4", title: "表格", icon: <InsertRowAboveOutlined />, component: null, subMenus: [
+            { key: "nav41", title: "基础表格", component: <BasicList /> },
+            { key: "nav42", title: "高级表格", component: <SeniorList /> },
+        ]
+    },
+    { key: "nav5", title: "富文本", icon: <ProfileOutlined />, component: <RichText /> },
+    { key: "nav6", title: "城市管理", icon: <ShopOutlined />, component: <Citys /> },
+    { key: "nav7", title: "订单管理", icon: <ContainerOutlined />, component: <OrderManage /> },
+    { key: "nav8", title: "员工管理", icon: <TeamOutlined />, component: <Employees /> },
+    { key: "nav9", title: "车辆地图", icon: <CarOutlined />, component: <CarMap /> },
+    {
+        key: "nav10", title: "图表", icon: <BarChartOutlined />, component: null, subMenus: [
+            { key: "nav101", title: "柱状图", component: <Charts1 /> },
+            { key: "nav102", title: "折线图", component: <Charts2 /> },
+            { key: "nav103", title: "饼状图", component: <Charts3 /> },
+        ]
+    },
+    { key: "nav11", title: "权限设置", icon: <KeyOutlined />, component: <Permission /> }
+]
 
 class MainPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            collapsed: false
+            collapsed: false, // 收起/展开侧边栏
+            openTabs: [{ ...menuList[0] }], // 打开的tab页签
+            activeTabKey: menuList[0].key
         }
     }
+
     // 展开收起侧导航栏
     toggleCollapsed = () => {
         console.log(this.state.collapsed)
         this.setState({
             collapsed: !this.state.collapsed,
         });
+    }
+    // 打开新的Tab页
+    clickSiderMenu = (menu) => {
+        let openTabs = [...this.state.openTabs]
+        if (!openTabs.some((tab) => { return tab.key === menu.key })) {
+            openTabs.push(menu);
+            this.setState({
+                openTabs,
+                activeTabKey: menu.key
+            })
+        } else {
+            this.onTabClick(menu.key); // 切换页签
+        }
+    }
+
+    // 删除页签时的触发事件
+    onEdit = (targetKey) => {
+        let openTabs = [...this.state.openTabs], activeTabKey = this.state.activeTabKey
+        for (let i = 0; i < openTabs.length; i++) {
+            if (openTabs[i].key === targetKey) {
+                openTabs.splice(i, 1);
+                // 如果删除是当前激活的页签
+                if (targetKey === activeTabKey) {
+                    activeTabKey = openTabs[i - 1].key
+                }
+                break;
+            }
+        }
+        this.setState({
+            openTabs,
+            activeTabKey
+        })
+    }
+
+    // 切换页签时触发
+    onTabClick = (targetKey) => {
+        this.setState({
+            activeTabKey: targetKey
+        })
     }
     render() {
         return (
@@ -35,78 +135,31 @@ class MainPage extends Component {
                         {!this.state.collapsed ? <h1>Bicycle</h1> : <Fragment />}
                     </div>
                     <Menu
-                        defaultSelectedKeys={['nav1']}
+                        defaultSelectedKeys={[menuList[0].key]}
                         mode="vertical"
-                        theme="dark">
-                        <Menu.Item key="nav1" icon={<DesktopOutlined />}>
-                            <Link to="/main/home">首页</Link>
-                        </Menu.Item>
-                        <SubMenu key="nav2" title="UI" icon={<SkinOutlined />}>
-                            <Menu.Item key="nav21">
-                                <Link to="/main/ui/buttons">按钮</Link>
-                            </Menu.Item>
-                            <Menu.Item key="nav22">
-                                <Link to="/main/ui/modal">弹窗</Link>
-                            </Menu.Item>
-                            <Menu.Item key="nav23">
-                                <Link to="/main/ui/loading">Loading</Link>
-                            </Menu.Item>
-                            <Menu.Item key="nav24">
-                                <Link to="/main/ui/notification">通知提醒</Link>
-                            </Menu.Item>
-                            <Menu.Item key="nav25">
-                                <Link to="/main/ui/message">全局Message</Link>
-                            </Menu.Item>
-                            <Menu.Item key="nav26">
-                                <Link to="/main/ui/tab">Tab页签</Link>
-                            </Menu.Item>
-                        </SubMenu>
-                        <SubMenu key="nav3" title="表单" icon={<FormOutlined />}>
-                            <Menu.Item key="nav31">
-                                <Link to="/login">登录</Link>
-                            </Menu.Item>
-                            <Menu.Item key="nav32">
-                                <Link to="/login">注册</Link>
-                            </Menu.Item>
-                        </SubMenu>
-                        <SubMenu key="nav4" title="表格" icon={<InsertRowAboveOutlined />}>
-                            <Menu.Item key="nav41">
-                                <Link to="/main/form/basic">基础表格</Link>
-                            </Menu.Item>
-                            <Menu.Item key="nav42">
-                                <Link to="/main/form/senior">高级表格</Link>
-                            </Menu.Item>
-                        </SubMenu>
-                        <Menu.Item key="nav5" icon={<ProfileOutlined />}>
-                            <Link to="/main/rich-text">富文本</Link>
-                        </Menu.Item>
-                        <Menu.Item key="nav6" icon={<ShopOutlined />}>
-                            <Link to="/main/citys">城市管理</Link>
-                        </Menu.Item>
-                        <Menu.Item key="nav7" icon={<ContainerOutlined />}>
-                            <Link to="/main/order-manage">订单管理</Link>
-                        </Menu.Item>
-                        <Menu.Item key="nav8" icon={<TeamOutlined />}>
-                            <Link to="/main/employees">员工管理</Link>
-                        </Menu.Item>
-                        <Menu.Item key="nav9" icon={<CarOutlined />}>
-                            <Link to="/main/map">车辆地图</Link>
-                        </Menu.Item>
-                        <SubMenu key="nav10" title="图表" icon={<BarChartOutlined />}>
-                            <Menu.Item key="nav101">
-                                <Link to="/main/charts1">柱状图</Link>
-                            </Menu.Item>
-                            <Menu.Item key="nav102">
-                                <Link to="/main/charts2">折线图</Link>
-                            </Menu.Item>
-                            <Menu.Item key="nav103">
-                                <Link to="/main/charts3">饼状图</Link>
-                            </Menu.Item>
-                        </SubMenu>
-                        <Menu.Item key="nav11" icon={<KeyOutlined />}>
-                            <Link to="/main/permission">权限设置</Link>
-                        </Menu.Item>
-                    </Menu>
+                        theme="dark">{
+                            menuList.map(menu => {
+                                if (menu.subMenus) {
+                                    return (
+                                        <SubMenu key={menu.key} title={menu.title} icon={menu.icon}>{
+                                            menu.subMenus.map(subMenu => {
+                                                return (
+                                                    <Menu.Item key={subMenu.key} icon={subMenu.icon} onClick={() => {
+                                                        this.clickSiderMenu(subMenu)
+                                                    }}>{subMenu.title}</Menu.Item>
+                                                )
+                                            })
+                                        }</SubMenu>
+                                    )
+                                } else {
+                                    return (
+                                        <Menu.Item key={menu.key} icon={menu.icon} onClick={() => {
+                                            this.clickSiderMenu(menu)
+                                        }}>{menu.title}</Menu.Item>
+                                    )
+                                }
+                            })
+                        }</Menu>
                 </Sider>
                 <Layout className="content-layout">
                     <Header className="header">
@@ -118,20 +171,23 @@ class MainPage extends Component {
                         <Link className="logout" to="/login"><span>退出</span></Link>
                     </Header>
                     <Content className="content">
-                        <Switch>
-                            {
-                                routes.map((router, index) => {
+                        <Tabs
+                            defaultActiveKey={this.state.openTabs[0].key}
+                            activeKey={this.state.activeTabKey}
+                            type="editable-card"
+                            size="small"
+                            onTabClick={this.onTabClick}
+                            onEdit={this.onEdit}
+                            hideAdd>{
+                                this.state.openTabs.map(tab => {
                                     return (
-                                        <Route key={index} exact={router.exact} path={router.path} component={router.component} />
+                                        <TabPane tab={tab.title} key={tab.key} closable={tab.key != "nav1"} forceRender>{tab.component}</TabPane>
                                     )
                                 })
-                            }
-                            <Redirect to="/main/home"></Redirect>
-                        </Switch>
+                            }</Tabs>
                     </Content>
-                    <Footer className="footer">Ant Design ©2018 Created by Ant UED</Footer>
                 </Layout>
-            </Layout>
+            </Layout >
         );
     }
 }
