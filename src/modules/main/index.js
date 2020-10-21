@@ -17,9 +17,7 @@ import Citys from './pages/citys'
 import OrderManage from './pages/order-manage'
 import Employees from './pages/employees'
 import CarMap from './pages/car-map'
-import Charts1 from './pages/charts1'
-import Charts2 from './pages/charts2'
-import Charts3 from './pages/charts3'
+import Charts from './pages/charts'
 import Permission from './pages/permission'
 
 import logoUrl from "./assets/bicycle.svg"
@@ -35,7 +33,7 @@ const menuList = [
     {
         key: "nav2", title: "UI", icon: <SkinOutlined />, component: null, subMenus: [
             { key: "nav21", title: "按钮", component: <Buttons /> },
-            { key: "nav22", title: "弹窗", component: <Modal /> },
+            { key: "nav22", title: "弹框", component: <Modal /> },
             { key: "nav23", title: "Loading", component: <Loading /> },
             { key: "nav24", title: "通知提醒", component: <Notification /> },
             { key: "nav25", title: "全局Message", component: <Message /> },
@@ -60,13 +58,7 @@ const menuList = [
     { key: "nav7", title: "订单管理", icon: <ContainerOutlined />, component: <OrderManage /> },
     { key: "nav8", title: "员工管理", icon: <TeamOutlined />, component: <Employees /> },
     { key: "nav9", title: "车辆地图", icon: <CarOutlined />, component: <CarMap /> },
-    {
-        key: "nav10", title: "图表", icon: <BarChartOutlined />, component: null, subMenus: [
-            { key: "nav101", title: "柱状图", component: <Charts1 /> },
-            { key: "nav102", title: "折线图", component: <Charts2 /> },
-            { key: "nav103", title: "饼状图", component: <Charts3 /> },
-        ]
-    },
+    { key: "nav10", title: "图表", icon: <BarChartOutlined />, component: <Charts /> },
     { key: "nav11", title: "权限设置", icon: <KeyOutlined />, component: <Permission /> }
 ]
 
@@ -181,7 +173,7 @@ class MainPage extends Component {
                             hideAdd>{
                                 this.state.openTabs.map(tab => {
                                     return (
-                                        <TabPane tab={tab.title} key={tab.key} closable={tab.key != "nav1"} forceRender>{tab.component}</TabPane>
+                                        <TabPane tab={tab.title} key={tab.key} closable={tab.key !== "nav1"} forceRender>{tab.component}</TabPane>
                                     )
                                 })
                             }</Tabs>

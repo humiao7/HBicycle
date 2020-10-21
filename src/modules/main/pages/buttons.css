@@ -1,0 +1,11 @@
+.buttons-page{
+    padding: 5px;
+}
+
+.buttons-page .ant-card {
+    min-height: 320px;
+}
+
+.buttons-page .ant-btn {
+    margin: 5px;
+}

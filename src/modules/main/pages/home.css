@@ -1,0 +1,8 @@
+.home-page {
+    padding: 5px;
+}
+
+.home-page .title {
+    font-size: 16px;
+    font-weight: bold;
+}
