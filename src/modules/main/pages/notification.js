@@ -39,8 +39,8 @@ const openNotification2 = () => {
 
 const openNotification3 = () => {
     const args = {
-        message: '倔强的提醒',
-        description: '除非你点我，不然我是不会自动关闭的...',
+        message: '兽人永不为奴',
+        description: '我是不会屈服的！',
         duration: 0,
         onClick: () => {
             console.log('点击通知');

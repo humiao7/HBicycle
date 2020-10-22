@@ -2,7 +2,88 @@
     padding: 5px;
 }
 
-.home-page .title {
-    font-size: 16px;
+.home-page .ant-card-hoverable {
+    border-radius: 10px;
+}
+
+.home-page .card-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+.home-page .statistic-num {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.home-page .statistic-num .uprise {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #f44336;
+}
+
+.home-page .statistic-num .decline {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #00bfa5;
+}
+
+.home-page .statistic-dist {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #999;
+}
+
+.home-page .statistic-dist .dist-item {
+    margin-top: 0.5em;
+    flex: 1;
+}
+
+.home-page .statistic-dist .dist-item span {
+    margin-left: 5px;
+}
+
+.home-page .overview-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 1em;
+    width: 100%;
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.home-page .overview-title .overview-title-desc {
+    flex: 1;
+    padding-left: 5px;
+    color: #999;
+    font-size: 12px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.home-page .overview-title .overview-title-desc span {
+    flex: 1;
+    font-size: 14px;
+    color: #f44336;
+    text-align: right;
+}
+
+.home-page .overview-progress {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-page .progress-type {
+    padding: 5px 30px 5px 0;
+    font-size: 12px;
     font-weight: bold;
 }

@@ -60,10 +60,18 @@
 .content-layout .content {
     margin: 5px 0 10px 5px;
     text-align: center;
-    background: #ffffff;
+
     overflow: scroll;
 }
 
 .content-layout .content .ant-tabs-nav-wrap {
     background: #f0f2f5;
+}
+
+.antd-tab-gary-backrgound {
+    background: #f9f9f9;
+}
+
+.antd-tab-whit-backrgound {
+    background: #fff;
 }

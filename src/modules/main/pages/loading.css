@@ -1,3 +1,7 @@
 .loading-page {
     padding: 5px;
 }
+
+.loading-page .alert-component {
+    margin-bottom: 10px;
+}

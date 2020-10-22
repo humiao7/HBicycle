@@ -165,6 +165,7 @@ class MainPage extends Component {
                     <Content className="content">
                         <Tabs
                             defaultActiveKey={this.state.openTabs[0].key}
+                            className={this.state.activeTabKey === this.state.openTabs[0].key ? 'antd-tab-gary-backrgound' : 'antd-tab-whit-backrgound'}
                             activeKey={this.state.activeTabKey}
                             type="editable-card"
                             size="small"
@@ -173,7 +174,7 @@ class MainPage extends Component {
                             hideAdd>{
                                 this.state.openTabs.map(tab => {
                                     return (
-                                        <TabPane tab={tab.title} key={tab.key} closable={tab.key !== "nav1"} forceRender>{tab.component}</TabPane>
+                                        <TabPane tab={tab.title} key={tab.key} closable={tab.key !== "nav1"}>{tab.component}</TabPane>
                                     )
                                 })
                             }</Tabs>
