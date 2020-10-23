@@ -30,10 +30,10 @@ class Slide extends Component {
                 <Card size="small" title="图片轮播" headStyle={{ textAlign: "left", fontWeight: "bold", background: "#f0f2f5" }}>
                     <Carousel autoplay>
                         <div className="image-slide">
-                            <img src="http://y.gtimg.cn/music/photo_new/T003R720x288M000001YCZlY3aBifi.jpg" />
+                            <img src="http://y.gtimg.cn/music/photo_new/T003R720x288M000001YCZlY3aBifi.jpg" alt="imageUrl"/>
                         </div>
                         <div className="image-slide">
-                            <img src="http://y.gtimg.cn/music/photo_new/T003R720x288M000004ckGfg3zaho0.jpg" />
+                            <img src="http://y.gtimg.cn/music/photo_new/T003R720x288M000004ckGfg3zaho0.jpg" alt="imageUrl"/>
                         </div>
                     </Carousel>
                 </Card>
