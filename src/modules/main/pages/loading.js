@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Card, Spin, Space, Switch, Alert } from 'antd';
 import { LoadingOutlined, SyncOutlined, SmileOutlined, ChromeOutlined } from '@ant-design/icons';
 
-import "./loading.css"
+import "../style/loading.css"
 
 class Loading extends Component {
     constructor(props) {

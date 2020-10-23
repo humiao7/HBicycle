@@ -1,0 +1,20 @@
+.slide-page {
+    padding: 5px;
+}
+
+.slide-page .text-slide {
+    height: 160px;
+    color: #fff;
+    line-height: 160px;
+    text-align: center;
+    background: #364d79;
+}
+
+.slide-page .image-slide{
+    height: 300px;
+    overflow: hidden;
+}
+
+.slide-page .image-slide img{
+    width: 100%;
+}

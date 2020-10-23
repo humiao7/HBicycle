@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Layout, Menu, Tabs } from 'antd'
 import { MenuUnfoldOutlined, MenuFoldOutlined, DesktopOutlined, SkinOutlined, FormOutlined, InsertRowAboveOutlined, ProfileOutlined, ShopOutlined, ContainerOutlined, TeamOutlined, CarOutlined, BarChartOutlined, KeyOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 import Home from './pages/home'
 import Buttons from './pages/buttons'
@@ -9,7 +9,7 @@ import Modal from './pages/modal'
 import Loading from './pages/loading'
 import Notification from './pages/notification'
 import Message from './pages/message'
-import Tab from './pages/tab'
+import Slide from './pages/slide'
 import BasicList from './pages/basic-list'
 import SeniorList from './pages/senior-list'
 import RichText from './pages/rich-text'
@@ -37,13 +37,12 @@ const menuList = [
             { key: "nav23", title: "Loading", component: <Loading /> },
             { key: "nav24", title: "通知提醒", component: <Notification /> },
             { key: "nav25", title: "全局Message", component: <Message /> },
-            { key: "nav26", title: "Tab页签", component: <Tab /> },
-            { key: "nav27", title: "轮播图", component: <Tab /> },
+            { key: "nav26", title: "轮播图", component: <Slide /> },
         ]
     },
     {
         key: "nav3", title: "表单", icon: <FormOutlined />, component: null, subMenus: [
-            { key: "nav31", title: "登录", component: null },
+            { key: "nav31", title: "登录", component: <Redirect to="/login"/> },
             { key: "nav32", title: "注册", component: null },
         ]
     },
@@ -124,7 +123,7 @@ class MainPage extends Component {
                 <Sider className="slide-layout" collapsed={this.state.collapsed}>
                     <div className="main-logo">
                         <img src={logoUrl} alt="logo" />
-                        {!this.state.collapsed ? <h1>Bicycle</h1> : <Fragment />}
+                        {!this.state.collapsed ? <h1>HBicycle</h1> : <Fragment />}
                     </div>
                     <Menu
                         defaultSelectedKeys={[menuList[0].key]}

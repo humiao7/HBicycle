@@ -3,7 +3,7 @@ import { Card, Button, notification } from 'antd';
 import { ClockCircleOutlined, RadiusUpleftOutlined, RadiusUprightOutlined, RadiusBottomleftOutlined, RadiusBottomrightOutlined, } from '@ant-design/icons';
 
 
-import "./notification.css"
+import "../style/notification.css"
 
 const openNotification1 = () => {
     notification.open({

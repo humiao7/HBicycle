@@ -11,7 +11,7 @@ import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 
-import "./home.css"
+import "../style/home.css"
 
 class Home extends Component {
     constructor(props) {

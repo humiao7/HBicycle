@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Card, Button, Modal } from 'antd';
 
-import "./modal.css"
+import "../style/modal.css"
 
 import duckUrl from "../assets/duck.jpg"
 
@@ -54,7 +54,7 @@ class ModalPage extends Component {
             content: (
                 <div>
                     <p>冲鸭...</p>
-                    <img src={duckUrl} style={{height:"100px"}}/>
+                    <img src={duckUrl} style={{ height: "100px" }} alt="duck"/>
                 </div>
             ),
             onOk() { },

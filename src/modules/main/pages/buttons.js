@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Col, Row, Card, Button, Tooltip, Radio, Menu, Dropdown } from 'antd';
 import { SearchOutlined, FolderOpenOutlined, DownloadOutlined, PoweroffOutlined, DownOutlined } from '@ant-design/icons';
 
-import './buttons.css'
+import '../style/buttons.css'
 
 class Buttons extends Component {
     constructor(props) {

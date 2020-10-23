@@ -1,0 +1,12 @@
+.charts-page {
+    padding: 5px;
+}
+
+.charts-page .ant-card {
+    min-height: 320px;
+}
+
+.charts-page .ant-card .charts-component{
+    width: 100%;
+    height: 250px;
+}

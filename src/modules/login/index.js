@@ -17,7 +17,7 @@ class Login extends Component {
         return (
             <div className="loginBackground">
                 <div className="loginBox">
-                    <h1>Login</h1>
+                    <h1>HBicycle Login</h1>
                     <Input size="large" allowClear placeholder="请输入账号" prefix={<UserOutlined />} style={{ borderRadius: "2px 2px 0 0" }} value={this.state.userName}/>
                     <Input.Password size="large" placeholder="请输入密码" prefix={<KeyOutlined />} style={{ borderRadius: "0 0 2px 2px" }} value={this.state.password}/>
                     <Link to="/main">
