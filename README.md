@@ -2,7 +2,7 @@
 
 从事前端开发以来主要做的都是以移动端为主的前端项目，想要挑战一下 PC 端的项目开发工作，想了很久却一直没有好的应用设计思路，偶然间看到[慕课网共享单车后台实战项目](http://imoocms.51purse.com/#/home)，就参照着页面设计，自己做了一下，权当学习了。
 
-HBicycle 是一个使用 create-react-app 手脚架工具搭建的 React 共享单车后台管理项目，这是一个测试项目，用于提升并检验自己项目搭建与前端开发能力。目前已完成后台系统的主体静态界面结构搭建，该项目正在维护中，往后将引入 Redux、Redux-saga 并结合 EasyMock 实现接口模拟，覆盖 React 全家桶的全部学习，当前可体验版本为 [v0.0.1](https://humiao7.github.io/react-demo.github.io/#/) ，在线预览请点击 [Demo](https://humiao7.github.io/react-demo.github.io/#/).
+HBicycle 是一个使用 create-react-app 手脚架工具搭建的 React 共享单车后台管理项目，这是一个测试项目，用于提升并检验自己项目搭建与前端开发能力。目前已完成后台系统的主体静态界面结构搭建，该项目正在维护中，往后将引入 Redux、Redux-saga 并结合 EasyMock 实现接口模拟，覆盖 React 全家桶的全部内容学习，当前可体验版本为 [v0.0.1](https://humiao7.github.io/HBicycle.github.io/) ，在线预览请点击 [Demo](https://humiao7.github.io/HBicycle.github.io/).
 
 
 ## 特点
@@ -24,7 +24,7 @@ HBicycle 是一个使用 create-react-app 手脚架工具搭建的 React 共享�
 ## 如何开始
 
 * 请先安装本地 [Node](https://nodejs.org/en/) 环境，要求 node 版本不低于 8.0.0
-* 克隆地址: `git clone https://github.com/humiao7/react-demo.git`
+* 克隆地址: `git clone https://github.com/humiao7/HBicycle.git`
 * 项目使用 yarn 进行依赖管理，安装 yarn 工具: `npm install -g yarn` 
 * 安装项目依赖: `yarn install`
 * 构建本地运行环境: `yarn start`
